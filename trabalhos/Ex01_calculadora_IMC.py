@@ -1,33 +1,27 @@
-print ("Bem vindo a Calculadora de IMC")
+peso = float(input("Digite seu Peso"))
+altura = float(input("Digite sua Altura"))
 
-pergunta_nome = input("Qual é o seu nome? " )
-nome = ("Olá" , pergunta_nome)
-idade = input (f"Qual sua idade? ")
-peso = float(input("Qual seu peso (em KG)? "))
-altura = float(input("Qual sua Altura (em metros e usando ponto)? "))
+imc = (peso/altura**2)
+print(imc)
 
-print("Vamos calcular seu IMC")
+if peso<=0 and altura<=0:
+    print("O numero e negativo Por favor Digite Algo valido Arrombado")
 
-imc = (peso / (altura * altura))
+if imc<=18.5:
+    print("Vai se alimentar Tu Vai morrer")
 
-print(pergunta_nome , (f"seu IMC é: {imc:.2f}"))
-
-if imc < 16:
-	print("Seu estado é de Magreza grave\nProcure um médico ou nutricionista.")
-elif imc < 17:
-	print("Seu estado é de Magreza moderada\nPrecisa rever sua alimentação.")
-elif imc < 18.5:
-	print("Seu estado é de Magreza leve\nPrecisa rever sua alimentação.")
-elif imc < 25:
-	print("Você está Saudável.\nParabéns!")
-elif imc < 30:
-	print("Seu estado é de Sobrepeso\nPrecisa rever sua alimentação.")
-elif imc < 35:
-	print("Seu estado é de Obesidade Grau I\nProcure um médico ou nutricionista.")
-elif imc < 40:
-	print("Seu estado é de Obesidade Grau II (severa)\nProcure um médico ou nutricionista.")
+elif imc>=18.5 and imc<=24.9:
+    print("Boa Ta Na media")
+elif imc>=25 and imc<=29.9:
+    print("Ta quase thais Carla")
+elif imc>=30 and imc<=34.9: 
+    peso_perdido=peso*0.2
+    print("Se voce Não fazer seu Cardio Vai virar a Thais Carla",peso_perdido)
+elif imc>=35 and imc<=39.9:
+    peso_perdido=peso*0.3
+    print("Ta se Transformando nela, vo te come vo te come",peso_perdido)
 else:
-	print("Seu estado é de Obesidade Grau III (mórbida)\nProcure um médico ou nutricionista.")
-Comment
- 
+    peso_perdido=peso*0.4
+    print("Viro a Thais Carla Pique Majin Boo",peso_perdido)
 
+    
